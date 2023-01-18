@@ -1,3 +1,5 @@
+import productForm from "./product-form.js";
+
 const loadContent = () => {
   let fragmentId = location.hash.substring(1);
   getContent(fragmentId, (content) => {
@@ -17,14 +19,14 @@ const getContent = (fragmentId, callback) => {
     case "addProduct":
       document.title = "Add Product";
       productId = null;
-      html = productFormHtml(); 
+      html = productForm;
       callback(html);
       validateProductForm();
       break;
 
     case "editProduct":
       document.title = "Edit Product";
-      html = productFormHtml();
+      html = productForm;
       callback(html);
       validateProductForm();
       fillEditProductForm();
